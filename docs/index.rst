@@ -8,7 +8,7 @@
 .. raw:: html
 
     <embed>
-      <iframe class="pull-right" src="https://player.youku.com/embed/XMzM5NTY5NjU4OA==" width="400" height="225" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+      <iframe src="https://player.youku.com/embed/XMzM5NTY5NjU4OA==" width="400" height="225" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </embed>
 
 Want to see Corda running? Download our demonstration application `DemoBench <https://www.corda.net/downloads/>`_ or
