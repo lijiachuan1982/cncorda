@@ -1,4 +1,4 @@
-Welcome to Corda !
+欢迎来到 Corda!
 ==================
 
 `Corda <https://www.corda.net/>`_ is an open-source blockchain platform. If you’d like a quick introduction to blockchains and how Corda is different, then watch this short video:
