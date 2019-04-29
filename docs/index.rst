@@ -20,7 +20,7 @@ If you want to start coding on Corda, then familiarise yourself with the :doc:`k
 our :doc:`Hello, World! tutorial </hello-world-introduction>`. For the background behind Corda, read the non-technical
 `platform white paper`_ or for more detail, the `technical white paper`_.
 
-如果你希望开始进行 Corda 开发的话，让你自己先熟悉一下 :doc:`核心概念 </key-concepts>`，并且读一读我们的 :doc:`Hello, World! tutorial </hello-world-introduction>`。关于在 Corda 背后的背景，阅读以下非技术的 `platform white paper`_ 或者有更多详细内容的 `technical white paper`_。
+如果你希望开始进行 Corda 开发的话，让你自己先熟悉一下 :doc:`核心概念 </key-concepts>`，并且读一读我们的 :doc:`Hello, World! tutorial </hello-world-introduction>`。关于在 Corda 背后的背景，阅读以下非技术的 `平台白皮书`_ 或者有更多详细内容的 `技术白皮书`_。
 
 If you have questions or comments, then get in touch on `Slack <https://slack.corda.net/>`_ or ask a question on
 `Stack Overflow <https://stackoverflow.com/questions/tagged/corda>`_ .
@@ -34,11 +34,11 @@ We look forward to seeing what you can do with Corda!
 .. note:: You can read this site offline. Either `download the PDF`_ or download the Corda source code, run ``gradle buildDocs`` and you will have
    a copy of this site in the ``docs/build/html`` directory.
 
-.. note:: 你可以用离线的方式阅读这个网站。或者 `download the PDF`_ 或者下载 Corda 的源代码，运行 ``gradle buildDocs`` 然后在  ``docs/build/html`` 你就能得到这个网站的拷贝了。
+.. note:: 你可以用离线的方式阅读这个网站。或者 `下载 PDF 文档`_ 或者下载 Corda 的源代码，运行 ``gradle buildDocs`` 然后在  ``docs/build/html`` 你就能得到这个网站的拷贝了。
 
-.. _`platform white paper`: _static/corda-platform-whitepaper.pdf
-.. _`technical white paper`: _static/corda-technical-whitepaper.pdf
-.. _`download the PDF`: _static/corda-developer-site.pdf
+.. _`平台白皮书`: _static/corda-platform-whitepaper.pdf
+.. _`技术白皮书`: _static/corda-technical-whitepaper.pdf
+.. _`下载 PDF 文档`: _static/corda-developer-site.pdf
 
 .. toctree::
    :maxdepth: 1
