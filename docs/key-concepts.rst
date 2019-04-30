@@ -40,5 +40,7 @@ The detailed thinking and rationale behind these concepts are presented in two w
 
 Explanations of the key concepts are also available as `videos <https://vimeo.com/album/4555732/>`_.
 
+关于核心概念的解释，也可以观看这些 `视频 <https://vimeo.com/album/4555732/>`_。
+
 .. _`Corda: 介绍`: _static/corda-introductory-whitepaper.pdf
 .. _`Corda: 一个分布式账本`: _static/corda-technical-whitepaper.pdf
