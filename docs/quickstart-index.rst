@@ -1,9 +1,13 @@
-Quickstart
+快速开始
 ==========
 
 Welcome to the Corda Quickstart Guide. Follow the links below to help get going quickly with Corda.
 
+欢迎来到 Corda 快速开始指南。跟着下边的链接能够帮助你快速地了解 Corda。
+
 I want to:
+
+我想要：
 
 * :ref:`Learn <quickstart-learn>` about Corda for the first time
 * :ref:`Develop <quickstart-develop>` a CorDapp
@@ -11,101 +15,105 @@ I want to:
 * :ref:`Add <quickstart-add>` a node to an existing test Corda network
 * :ref:`Add <quickstart-production>` a node to an existing production network
 
+* :ref:`第一次 学习 <quickstart-learn>` Corda
+* :ref:`开发 <quickstart-develop>` 一个 CorDapp
+* :ref:`在本地的 Corda 网络上 运行 <quickstart-run>` 并且测试一个 CorDapp
+* :ref:`向一个已经存在的测试 Corda 网络中添加 <quickstart-add>` 一个节点
+* :ref:`向一个身产环境中 添加 <quickstart-production>` 一个节点
+
 .. _quickstart-learn:
 
-Learn about Corda for the first time
+第一次学习 Corda
 ------------------------------------
 
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| Useful links                               | Description                                                                                |
+| 有用的链接                               | 描述                                                                               |
 +============================================+============================================================================================+
-| :doc:`key-concepts`                        | The key concepts and features of the Corda Platform                                        |
+| :doc:`key-concepts`                        | Corda 平台的核心概念和功能                                        |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`getting-set-up`                      | Set up your machine for running and developing CorDapps                                    |
+| :doc:`getting-set-up`                      | 配置你的电脑来运行和开发 CorDapps                                    |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`tutorial-cordapp`                    | A guide to running a simple CorDapp                                                        |
+| :doc:`tutorial-cordapp`                    | 运行一个简单的 CorDapp 的指南                                                   |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. _quickstart-develop:
 
-Develop a CorDapp
+开发一个 CorDapp
 -----------------
 
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| Useful links                               | Description                                                                                |
+| 有用的链接                               | 描述                                                                                |
 +============================================+============================================================================================+
-| :doc:`hello-world-introduction`            | A coding walk-through of a basic CorDapp                                                   |
+| :doc:`hello-world-introduction`            | 一个基本的 CorDapp 的开发过程                                                   |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`cordapp-overview`                    | An introduction to CordApps                                                                |
+| :doc:`cordapp-overview`                    | 关于 CordApps 的介绍                                                                |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`writing-a-cordapp`                   | How to structure a CorDapp project                                                         |
+| :doc:`writing-a-cordapp`                   | 如何构建一个 CorDapp 项目                                                         |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`cordapp-build-systems`               | How to build a CorDapp                                                                     |
+| :doc:`cordapp-build-systems`               | 如何构建 a CorDapp                                                                     |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`corda-api`                           | A guide to the CorDapp API                                                                 |
+| :doc:`corda-api`                           | 一个关于 CorDapp API 的介绍                                                                |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. _quickstart-run:
 
-Run and test a CorDapp on local Corda network
+在本地 Corda 网络中运行和测试一个 CorDapp
 ---------------------------------------------
 
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| Useful links                                   | Description                                                                            |
+| 有用的链接                                   | 描述                                                                            |
 +================================================+========================================================================================+
-| :doc:`generating-a-node`                       | Guidance on creating Corda nodes for development and testing locally and on Docker     |
+| :doc:`generating-a-node`                       | 一个关于在本地的 Docker 上创建用于开发和测试的 Corda 节点的指南     |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`node-structure`                          | The Corda node folder structure and how to name your node                              |
+| :doc:`node-structure`                          | Corda 节点文件夹结构以及该如何命名你的节点                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`corda-configuration-file`                | A detailed description of the Corda node configuration file with examples              |
+| :doc:`corda-configuration-file`                | 带有例子的 Corda 节点配置文件的详细描述              |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`running-a-node`                          | Guidance on running Corda nodes locally and on Docker                                  |
+| :doc:`running-a-node`                          | 关于如何在本地的 Docker 上运行 Corda 节点的指南                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`setting-up-a-dynamic-compatibility-zone` | Considerations for setting up a Corda network                                          |
+| :doc:`setting-up-a-dynamic-compatibility-zone` | 关于配置一个 Corda 网络的需要考虑的问题                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`shell`                                   | Guidance on using an embedded command line to control and monitor a node               |
+| :doc:`shell`                                   | 关于如何使用一个内置的命令行来控制和监控一个节点的指南               |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`node-administration`                     | How to monitor a Corda node using an RPC interface                                     |
+| :doc:`node-administration`                     | 如何使用一个 RPC 接口来监控一个 Corda 节点                                     |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
-| :doc:`node-explorer`                           | A GUI-based tool to view transactional data and transactional history for a node       |
+| :doc:`node-explorer`                           | 一个基于 GUI 的用来查看一个节点的交易数据和交易历史的工具       |
 +------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. _quickstart-add:
 
-Add a node to an existing test Corda network
+向一个已经存在的测试 Corda 网络中添加一个节点
 --------------------------------------------
 
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| Useful links                               | Description                                                                                |
+| 有用的链接                               | 描述                                                                                |
 +============================================+============================================================================================+
-| :doc:`node-structure`                      | The Corda node folder structure and how to name your node                                  |
+| :doc:`node-structure`                      | Corda 文件夹结构以及你该如何命名你的节点                                  |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`corda-configuration-file`            | A detailed description of the Corda node configuration file with examples                  |
+| :doc:`corda-configuration-file`            | 带有例子的 Corda 节点配置文件的详细描述                  |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`deploying-a-node`                    | A step-by-step guide on deploying a Corda node to your own server                          |
+| :doc:`deploying-a-node`                    | 一个详细的向你自己的服务器上部署一个 Corda 节点的指南                          |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`azure-vm`                            | A step-by-step guide on creating a Corda Network on Azure                                  |
+| :doc:`azure-vm`                            | 一个详细的在 Azure 上创建一个 Corda 网络的指南                                  |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`aws-vm`                              | A step-by-step guide on creating a Corda Network on AWS                                    |
+| :doc:`aws-vm`                              | 一个详细的在 AWS 上创建一个 Corda 网络的指南                                   |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`shell`                               | Guidance on using an embedded command line to control and monitor a node                   |
+| :doc:`shell`                               | 一个关于如何使用内置的命令行来管理和监控一个节点的指南                   |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`node-administration`                 | How to monitor a Corda node using an RPC interface                                         |
+| :doc:`node-administration`                 | 如何使用 RPC 接口来监控一个 Corda 节点                                         |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`node-explorer`                       | A GUI-based tool to view transactional data and transactional history for a node           |
+| :doc:`node-explorer`                       | 一个基于 GUI 的用来查看一个节点的交易数据和交易历史的工具           |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
-| :doc:`blob-inspector`                      | A troubleshooting tool allowing you to read the contents of a binary blob file             |
+| :doc:`blob-inspector`                      | 一个允许你读取一个二进制的 blob 文件的查错工具             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. _quickstart-production:
 
-Add a node to an existing production network
+向一个已经存在的生产环境中添加一个节点
 --------------------------------------------
 
 +---------------------------------------------------------------------------------------------------------+
-| Corda Network is a global production network of Corda nodes, operated by the independent                |
-| Corda Network Foundation. You can learn more here: https://corda.network/participation/index.html       |
+| Corda 网络是一个由 Corda 节点构成的全球的生产网络，由独立的 Corda 网络基金会来维护。你能够在这里学习到更多的内容: https://corda.network/participation/index.html       |
 +---------------------------------------------------------------------------------------------------------+
-| Corda Testnet is a test network, operated for the community by R3. You can learn                        |
-| more here: https://testnet.corda.network                                                                |
+| Corda Testnet 是一个测试网络，是 R3 为社区而维护的。你能够在这里学习到更多的内容: https://testnet.corda.network                                                                |
 +---------------------------------------------------------------------------------------------------------+
