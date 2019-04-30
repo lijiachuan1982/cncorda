@@ -1,7 +1,7 @@
 网络
 ===========
 
-.. topic:: Summary
+.. topic:: 概要
 
    * *A Corda network is made up of nodes running Corda and CorDapps*
    * *Communication between nodes is point-to-point, instead of relying on global broadcasts*
