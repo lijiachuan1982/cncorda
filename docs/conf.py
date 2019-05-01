@@ -15,35 +15,6 @@
 import sys
 import os
 
-############################################################################
-#
-# TEXT SUBSTITUTIONS
-
-with open("./constants.properties", "r") as f:
-    constants_properties_lines = f.readlines()
-constants_properties_dict = dict([l.strip().split('=') for l in constants_properties_lines if not l.startswith("#") and not l.strip() == ""])
-
-def cordaSourceReadReplace(app, docname, source):
-    result = source[0]
-    for key in app.config.corda_substitutions:
-        result = result.replace(key, app.config.corda_substitutions[key])
-    source[0] = result
-
-corda_substitutions = {
-    "|corda_version|" : constants_properties_dict["cordaVersion"],
-    "|java_version|" : "8u"+constants_properties_dict["java8MinUpdateVersion"],
-    "|kotlin_version|" : constants_properties_dict["kotlinVersion"],
-    "|gradle_plugins_version|" : constants_properties_dict["gradlePluginsVersion"],
-    "|quasar_version|" : constants_properties_dict["quasarVersion"],
-    "|platform_version|" : constants_properties_dict["platformVersion"]
-}
-
-def setup(app):
-   app.add_config_value('corda_substitutions', {}, True)
-   app.connect('source-read', cordaSourceReadReplace)
-
-############################################################################
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
