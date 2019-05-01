@@ -57,6 +57,7 @@ The vault supports the management of data in both authoritative ("on-ledger") fo
 * "Off-ledger" data refers to a firm's internal reference, static and systems data.
 
 Vault 支持管理需授权的（“on-ledger”）的数据，也可以管理 shadow（“off-ledger”）形式的数据：
+
 * “On-ledger” 数据指的是分发的 ledger state （现金、交易），一个公司会参与其中。
 * “Off-ledger” 数据指的是公司内部的参考数据、静态或者系统数据。
 
