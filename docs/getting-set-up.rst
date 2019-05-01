@@ -35,6 +35,8 @@ Please note:
 
 * 基于 Corda 的应用程序（CorDapps）能够使用任何能够运行在 JVM 中的语言来编写。但是 Corda 本身以及大多数的样例程序都是用 Kotlin 编写的。Kotlin 是 `Android 官方语言 <https://developer.android.com/kotlin/index.html>`_，你可以 `在这 <https://medium.com/@octskyward/why-kotlin-is-my-next-programming-language-c25c001e26e3>`_ 阅读更多关于为什么 Kotlin 是 Java 的后继者。如果你对 Kotlin 还不熟悉的话，这里有一个官方的 `指南 <https://kotlinlang.org/docs/tutorials/>`_，和一系列的 `Kotlin Koans <https://kotlinlang.org/docs/tutorials/koans.html>`_。
 
+* 推荐使用 IntelliJ IDEA 因为它同 Kotlin 集成的优势。
+
 Following these software recommendations will minimize the number of errors you encounter, and make it easier for
 others to provide support. However, if you do use other tools, we'd be interested to hear about any issues that arise.
 
