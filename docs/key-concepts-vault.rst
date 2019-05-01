@@ -92,7 +92,7 @@ Note the following:
 
 Section 8 of the `Technical white paper`_ describes features of the vault yet to be implemented including private key management, state splitting and merging, asset re-issuance and node event scheduling.
 
-`技术白皮书`_ 的第 8 部分描述了 vault 尚未实现的一些功能，包括私钥的管理、state 的拆分及合并、资产的再发行以及节点事件的日程安排。
+`Technical white paper`_ 的第 8 部分描述了 vault 尚未实现的一些功能，包括私钥的管理、state 的拆分及合并、资产的再发行以及节点事件的日程安排。
 
-.. _`技术白皮书`: _static/corda-technical-whitepaper.pdf
+.. _`Technical white paper`: _static/corda-technical-whitepaper.pdf
 
