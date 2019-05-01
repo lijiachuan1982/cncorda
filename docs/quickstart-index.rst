@@ -15,11 +15,11 @@ I want to:
 * :ref:`Add <quickstart-add>` a node to an existing test Corda network
 * :ref:`Add <quickstart-production>` a node to an existing production network
 
-* :ref:`第一次 学习 <quickstart-learn>` Corda
+* 第一次 :ref:`学习 <quickstart-learn>` Corda
 * :ref:`开发 <quickstart-develop>` 一个 CorDapp
-* :ref:`在本地的 Corda 网络上 运行 <quickstart-run>` 并且测试一个 CorDapp
-* :ref:`向一个已经存在的测试 Corda 网络中添加 <quickstart-add>` 一个节点
-* :ref:`向一个身产环境中 添加 <quickstart-production>` 一个节点
+* 在本地的 Corda 网络上 :ref:`运行 <quickstart-run>` 并且测试一个 CorDapp
+* 向一个已经存在的测试 Corda 网络中 :ref:`添加 <quickstart-add>` 一个节点
+* 向一个生产环境中 :ref:`添加 <quickstart-production>` 一个节点
 
 .. _quickstart-learn:
 
