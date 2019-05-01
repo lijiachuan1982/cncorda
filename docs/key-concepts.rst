@@ -35,10 +35,12 @@ The detailed thinking and rationale behind these concepts are presented in two w
 
 在这些概念背后的详细的思想和基本原理在下边的两个白皮书里有表述：
 
-    * `Corda: An Introduction`_
-    * `Corda: A Distributed Ledger`_ (A.K.A. the Technical White Paper)
+    * `Corda: 介绍`_
+    * `Corda: 一个分布式账本`_ (A.K.A. 技术白皮书)
 
 Explanations of the key concepts are also available as `videos <https://vimeo.com/album/4555732/>`_.
 
-.. _`Corda: An Introduction`: _static/corda-introductory-whitepaper.pdf
-.. _`Corda: A Distributed Ledger`: _static/corda-technical-whitepaper.pdf
+关于核心概念的解释，也可以观看这些 `视频 <https://vimeo.com/album/4555732/>`_。
+
+.. _`Corda: 介绍`: _static/corda-introductory-whitepaper.pdf
+.. _`Corda: 一个分布式账本`: _static/corda-technical-whitepaper.pdf
