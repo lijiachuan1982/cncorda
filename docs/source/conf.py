@@ -18,7 +18,7 @@ import os
 #
 # TEXT SUBSTITUTIONS
 
-with open("./constants.properties", "r") as f:
+with open("../../constants.properties", "r") as f:
     constants_properties_lines = f.readlines()
 constants_properties_dict = dict([l.strip().split('=') for l in constants_properties_lines if not l.startswith("#") and not l.strip() == ""])
 
