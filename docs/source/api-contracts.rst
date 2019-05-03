@@ -17,7 +17,7 @@ Contract
 --------
 Contracts are classes that implement the ``Contract`` interface. The ``Contract`` interface is defined as follows:
 
-Contracts 都是实现了 ``Contract`` 接口的类。``Contract`` 接口定义如下
+Contracts 都是实现了 ``Contract`` 接口的类。``Contract`` 接口定义如下：
 
 .. container:: codeset
 
@@ -33,6 +33,12 @@ nothing. This function is used to check whether a transaction proposal is valid,
 * We call each contract's ``verify`` function, passing in the transaction as an input
 * The proposal is only valid if none of the ``verify`` calls throw an exception
 
+``Contract`` 只有一个 ``verify`` 方法，它会有一个 ``LedgerTransaction`` 作为 input 参数并且不会返回任何内容。这个方法被用来检验一个交易的提议是否有效，包括下边的验证：
+
+* 我们会搜集这个交易的 input 和 output states 的 contract code
+* 我们会调用每个 contract code 的 ``verify`` 方法，将 transaction 作为 input 传进去
+* 这个更新账本的提议仅仅在所有的 verify 方法都没有返回 exception 的情况下才算是有效的
+
 ``verify`` is executed in a sandbox:
 
 * It does not have access to the enclosing scope
@@ -41,12 +47,25 @@ nothing. This function is used to check whether a transaction proposal is valid,
   * I/O such as disk or database access
   * Sources of randomness such as the current time or random number generators
 
+``verify`` 是在一个 sandbox 中执行的：
+
+* 它没有权限访问内部的内容
+* 针对于它可用的类库被放入白名单来不允许：
+  * 网络访问
+  * 硬盘或数据库访问的 I/O
+  * 随机的资源比如当前的时间或者随机数生成器
+
 This means that ``verify`` only has access to the properties defined on ``LedgerTransaction`` when deciding whether a
 transaction is valid.
 
+这意味着 ``verify`` 仅仅能够在决定一个交易是否有效的时候才能够访问 ``LedgerTransaction`` 中定义的属性。
+
 Here are the two simplest ``verify`` functions:
 
+最简单的两个 verify 方法：
+
 * A  ``verify`` that **accepts** all possible transactions:
+* 一个 ``verify`` **接受** 所有可能的 transactions：
 
 .. container:: codeset
 
@@ -64,6 +83,7 @@ Here are the two simplest ``verify`` functions:
         }
 
 * A ``verify`` that **rejects** all possible transactions:
+* 一个 ``verify`` **拒绝** 所有的 transactions：
 
 .. container:: codeset
 
@@ -84,6 +104,8 @@ LedgerTransaction
 -----------------
 The ``LedgerTransaction`` object passed into ``verify`` has the following properties:
 
+被传入 verify 方法中的 ``LedgerTransaction`` 对象具有以下属性：
+
 .. container:: codeset
 
     .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/transactions/LedgerTransaction.kt
@@ -100,6 +122,15 @@ Where:
 * ``notary`` is the transaction's notary. This must match the notary of all the inputs
 * ``timeWindow`` defines the window during which the transaction can be notarised
 
+其中：
+
+* ``inputs`` 是类型为 ``List<StateAndRef<ContractState>>`` 的 transaction 的 inputs
+* ``outputs`` 是类型为 ``List<TransactionState<ContractState>>`` 的 transaction 的 outputs
+* ``commands`` 是类型为 ``List<CommandWithParties<CommandData>>`` 的 transaction 的 commands 和相关的签名者
+* ``attachments`` 是类型为 ``List<Attachment>`` 的 transaction 的 attachments
+* ``notary`` 是 transaction 的 notary。这个必须要同所有的 inputs 拥有相同的 notary
+* ``timeWindow`` 定义了一笔交易在什么样的时间窗内才会被公正
+
 ``LedgerTransaction`` exposes a large number of utility methods to access the transaction's contents:
 
 * ``inputStates`` extracts the input ``ContractState`` objects from the list of ``StateAndRef``
@@ -112,9 +143,20 @@ Where:
 * ``findInput``/``findInRef``/``findOutput``/``findOutRef``/``findCommand`` extracts the single component that matches
   a predicate, or throws an exception if there are multiple matches
 
+``LedgerTransaction`` 暴漏了很多 utility 方法来访问交易的内容：
+
+* ``inputStates`` 从 ``StateAndRef`` 列表中获得 input ``ContractState`` 对象
+* ``getInput``/``getOutput``/``getCommand``/``getAttachment`` 通过索引（index）来获得某个组件
+* ``getAttachment`` 通过 ID 获得一个附件
+* ``inputsOfType``/``inRefsOfType``/``outputsOfType``/``outRefsOfType``/``commandsOfType`` 基于他们的通用类型获得相关组件
+* ``filterInputs``/``filterInRefs``/``filterOutputs``/``filterOutRefs``/``filterCommands`` 基于一个前提条件获得相关组件
+* ``findInput``/``findInRef``/``findOutput``/``findOutRef``/``findCommand`` 获得满足一定条件的单一组件，或者当有多个满足条件的组件的时候抛出异常
+
 requireThat
 -----------
 ``verify`` can be written to manually throw an exception for each constraint:
+
+``verify`` 能够针对每一个约束手动地抛出异常：
 
 .. container:: codeset
 
@@ -139,6 +181,8 @@ requireThat
         }
 
 However, this is verbose. To impose a series of constraints, we can use ``requireThat`` instead:
+
+但是这个定义有些繁琐。我们可以使用 ``requireThat`` 来定义一系列的约束：
 
 .. container:: codeset
 
@@ -169,10 +213,14 @@ For each <``String``, ``Boolean``> pair within ``requireThat``, if the boolean c
 ``IllegalArgumentException`` is thrown with the corresponding string as the exception message. In turn, this
 exception will cause the transaction to be rejected.
 
+对于 ``requireThat`` 中的每一个 <``String``, ``Boolean``> 对来说，如果 boolean 条件返回的是 false，一个 ``IllegalArgumentException`` 会被抛出，包含对应的错误信息。所以这个错误会造成 transaction 被拒绝。
+
 Commands
 --------
 ``LedgerTransaction`` contains the commands as a list of ``CommandWithParties`` instances. ``CommandWithParties`` pairs
 a ``CommandData`` with a list of required signers for the transaction:
+
+``LedgerTransaction`` 包含了作为 ``CommandWithParties`` 实例列表的 commands。``CommandWithParties`` 将一个 ``CommandData`` 和一个所需的签名者列表匹配起来：
 
 .. container:: codeset
 
@@ -187,13 +235,23 @@ Where:
 * ``signingParties`` is the list of the signer's identities, if known
 * ``value`` is the object being signed (a command, in this case)
 
-Branching verify with commands
+其中：
+
+* ``signers`` 是每个签名者的 ``PublicKey`` 的一个列表
+* ``signingParties`` 签名者 identities 的列表，如果知道的话
+* ``value`` 是被签名的对象（在这里指的是这个 command）
+
+使用 commands 来处理 verify 分支
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Generally, we will want to impose different constraints on a transaction based on its commands. For example, we will
 want to impose different constraints on a cash issuance transaction to on a cash transfer transaction.
 
+通常来说，我们希望基于交易的 commands 来定义不同的约束条件。比如我们想要为一个现金发行的 transaction 和 一个现金交换的 transaction 定义不同的合约。
+
 We can achieve this by extracting the command and using standard branching logic within ``verify``. Here, we extract
 the single command of type ``XContract.Commands`` from the transaction, and branch ``verify`` accordingly:
+
+我们可以通过提取这个 command 并在 ``verify`` 里使用标准的分支逻辑来实现这个功能。这里我们提取了交易中的类型为 ``XContract.Commands`` 的单独的 command，并且相应地对 ``verify`` 进行了分支逻辑判断：
 
 .. container:: codeset
 
