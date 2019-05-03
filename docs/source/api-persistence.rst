@@ -40,7 +40,7 @@ database and made accessible using SQL.
 
 如果一个 ``ContractState`` 想要被插入到节点数据库中的一个自定义表中并且可以使用 SQL 来访问的话，那么它就可能会实现 ``QueryableState`` 接口。
 
-.. literalinclude:: ../core/src/main/kotlin/net/corda/core/schemas/PersistentTypes.kt
+.. literalinclude:: ../../core/src/main/kotlin/net/corda/core/schemas/PersistentTypes.kt
     :language: kotlin
     :start-after: DOCSTART QueryableState
     :end-before: DOCEND QueryableState
@@ -57,12 +57,12 @@ representation (mapped object) via the ``generateMappedObject`` method, the outp
 
 节点有一个内部的 ``SchemaService``，该服务通过使用选择的 ``MappedSchema`` 来决定过了什么会被持久化，什么不会。一旦一个 ``MappedSchema`` 被选择了之后，``SchemaService`` 将会委派 ``QueryableState`` 使用 ``generateMappedObject`` 方法来生成一个相对应的展示（mapped 对象），它的 output 接下来会被传入 *ORM*。
 
-.. literalinclude:: ../node/src/main/kotlin/net/corda/node/services/api/SchemaService.kt
+.. literalinclude:: ../../node/src/main/kotlin/net/corda/node/services/api/SchemaService.kt
     :language: kotlin
     :start-after: DOCSTART SchemaService
     :end-before: DOCEND SchemaService
 
-.. literalinclude:: ../core/src/main/kotlin/net/corda/core/schemas/PersistentTypes.kt
+.. literalinclude:: ../../core/src/main/kotlin/net/corda/core/schemas/PersistentTypes.kt
     :language: kotlin
     :start-after: DOCSTART MappedSchema
     :end-before: DOCEND MappedSchema
@@ -150,7 +150,7 @@ Several examples of entities and mappings are provided in the codebase, includin
 
 .. container:: codeset
 
-    .. literalinclude:: ../finance/contracts/src/main/kotlin/net/corda/finance/schemas/CashSchemaV1.kt
+    .. literalinclude:: ../../finance/contracts/src/main/kotlin/net/corda/finance/schemas/CashSchemaV1.kt
         :language: kotlin
 
 .. note:: If Cordapp needs to be portable between Corda OS (running against H2) and Corda Enterprise (running against a standalone database),
@@ -396,7 +396,7 @@ Use the ``ServiceHub`` ``jdbcSession`` function to obtain a JDBC connection as i
 
 使用 ``ServiceHub`` ``jdbcSession`` 方法像下边这样获得一个 JDBC 连接：
 
-.. literalinclude:: ../node/src/test/kotlin/net/corda/node/services/persistence/HibernateConfigurationTest.kt
+.. literalinclude:: ../../node/src/test/kotlin/net/corda/node/services/persistence/HibernateConfigurationTest.kt
   :language: kotlin
   :start-after: DOCSTART JdbcSession
   :end-before: DOCEND JdbcSession
@@ -409,7 +409,7 @@ The following example illustrates the creation of a custom Corda service using a
 
 下边的例子展示了使用一个 ``jdbcSession`` 来创建一个自定义的 corda service：
 
-.. literalinclude:: ./example-code/src/main/kotlin/net/corda/docs/kotlin/vault/CustomVaultQuery.kt
+.. literalinclude:: ../../docs/source/example-code/src/main/kotlin/net/corda/docs/kotlin/vault/CustomVaultQuery.kt
   :language: kotlin
   :start-after: DOCSTART CustomVaultQuery
   :end-before: DOCEND CustomVaultQuery

@@ -22,7 +22,7 @@ as follows:
 
 .. container:: codeset
 
-    .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/ContractState.kt
+    .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/ContractState.kt
         :language: kotlin
         :start-after: DOCSTART 1
         :end-before: DOCEND 1
@@ -78,7 +78,7 @@ The ``LinearState`` interface is defined as follows:
 
 .. container:: codeset
 
-    .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
+    .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
         :language: kotlin
         :start-after: DOCSTART 2
         :end-before: DOCEND 2
@@ -131,7 +131,7 @@ The ``OwnableState`` interface is defined as follows:
 
 .. container:: codeset
 
-    .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
+    .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
         :language: kotlin
         :start-after: DOCSTART 3
         :end-before: DOCEND 3
@@ -175,7 +175,7 @@ The interface is defined as follows:
 
 .. container:: codeset
 
-    .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/FungibleState.kt
+    .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/FungibleState.kt
         :language: kotlin
         :start-after: DOCSTART 1
         :end-before: DOCEND 1
@@ -223,7 +223,7 @@ and methods. For example, here is the relatively complex definition for a state 
 
 .. container:: codeset
 
-    .. literalinclude:: ../finance/contracts/src/main/kotlin/net/corda/finance/contracts/asset/Cash.kt
+    .. literalinclude:: ../../finance/contracts/src/main/kotlin/net/corda/finance/contracts/asset/Cash.kt
         :language: kotlin
         :start-after: DOCSTART 1
         :end-before: DOCEND 1
@@ -254,7 +254,7 @@ When a ``ContractState`` is added to a ``TransactionBuilder``, it is wrapped in 
 
 .. container:: codeset
 
-   .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/TransactionState.kt
+   .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/TransactionState.kt
       :language: kotlin
       :start-after: DOCSTART 1
       :end-before: DOCEND 1

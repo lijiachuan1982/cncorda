@@ -21,7 +21,7 @@ Contracts 都是实现了 ``Contract`` 接口的类。``Contract`` 接口定义�
 
 .. container:: codeset
 
-    .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
+    .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
         :language: kotlin
         :start-after: DOCSTART 5
         :end-before: DOCEND 5
