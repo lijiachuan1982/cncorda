@@ -47,13 +47,6 @@ sys.path.append(os.path.abspath('../ext/'))
 # m2r is a Markdown to RST converter, as our design docs use Markdown.
 extensions = ['m2r', 'conditional_toctree']
 
-# PDF configuration
-pdf_documents = [('index', u'corda-developer-site', u'Corda Developer Documentation', u'R3')]
-pdf_stylesheets = ['sphinx', 'kerning', 'a4', 'murphy', 'tenpoint']
-pdf_compressed = True
-pdf_fit_mode = "shrink"
-pdf_fit_background_mode = "shrink"
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
