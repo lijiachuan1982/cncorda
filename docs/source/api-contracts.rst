@@ -9,15 +9,19 @@ API: Contracts
 
 .. note:: Before reading this page, you should be familiar with the key concepts of :doc:`key-concepts-contracts`.
 
+.. note:: 当你阅读这里的时候，你应该已经熟悉了核心概念 :doc:`key-concepts-contracts`。
+
 .. contents::
 
 Contract
 --------
 Contracts are classes that implement the ``Contract`` interface. The ``Contract`` interface is defined as follows:
 
+Contracts 都是实现了 ``Contract`` 接口的类。``Contract`` 接口定义如下
+
 .. container:: codeset
 
-    .. literalinclude:: ../../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
+    .. literalinclude:: ../core/src/main/kotlin/net/corda/core/contracts/Structures.kt
         :language: kotlin
         :start-after: DOCSTART 5
         :end-before: DOCEND 5
