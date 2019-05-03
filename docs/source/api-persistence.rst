@@ -481,6 +481,8 @@ the entity in this case should not subclass ``PersistentState`` (as it is not a 
 
 Instances of ``PersistentFoo`` can be manually persisted inside a flow as follows:
 
+``PersistentFoo`` 的实例能够向下边这样在一个 flow 中被手动地持久化：
+
 .. container:: codeset
 
     .. sourcecode:: java
@@ -499,6 +501,8 @@ Instances of ``PersistentFoo`` can be manually persisted inside a flow as follow
         }
 
 And retrieved via a query, as follows:
+
+并且像下边这样通过一个查询取回：
 
 .. container:: codeset
 
