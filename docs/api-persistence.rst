@@ -396,7 +396,7 @@ Use the ``ServiceHub`` ``jdbcSession`` function to obtain a JDBC connection as i
 
 使用 ``ServiceHub`` ``jdbcSession`` 方法像下边这样获得一个 JDBC 连接：
 
-.. literalinclude:: ../../node/src/test/kotlin/net/corda/node/services/persistence/HibernateConfigurationTest.kt
+.. literalinclude:: ../node/src/test/kotlin/net/corda/node/services/persistence/HibernateConfigurationTest.kt
   :language: kotlin
   :start-after: DOCSTART JdbcSession
   :end-before: DOCEND JdbcSession
@@ -409,7 +409,7 @@ The following example illustrates the creation of a custom Corda service using a
 
 下边的例子展示了使用一个 ``jdbcSession`` 来创建一个自定义的 corda service：
 
-.. literalinclude:: ../../docs/source/example-code/src/main/kotlin/net/corda/docs/kotlin/vault/CustomVaultQuery.kt
+.. literalinclude:: ./example-code/src/main/kotlin/net/corda/docs/kotlin/vault/CustomVaultQuery.kt
   :language: kotlin
   :start-after: DOCSTART CustomVaultQuery
   :end-before: DOCEND CustomVaultQuery
@@ -418,7 +418,7 @@ which is then referenced within a custom flow:
 
 它会像下边这样在一个自定义的 flow 里被引用：
 
-.. literalinclude:: ../../docs/source/example-code/src/main/kotlin/net/corda/docs/kotlin/vault/CustomVaultQuery.kt
+.. literalinclude:: ./example-code/src/main/kotlin/net/corda/docs/kotlin/vault/CustomVaultQuery.kt
   :language: kotlin
   :start-after: DOCSTART TopupIssuer
   :end-before: DOCEND TopupIssuer
