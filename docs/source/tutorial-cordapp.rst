@@ -4,7 +4,7 @@
    <script type="text/javascript" src="_static/jquery.js"></script>
    <script type="text/javascript" src="_static/codesets.js"></script>
 
-Running the example CorDapp
+运行 CorDapp 例子
 ===========================
 
 .. contents::
