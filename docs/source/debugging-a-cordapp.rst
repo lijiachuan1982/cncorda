@@ -1,4 +1,4 @@
-Debugging a CorDapp
+Debugging 一个 CorDapp
 ===================
 
 .. contents::
