@@ -102,8 +102,8 @@
 
 - Troubleshooting
 
-- Nodes
-   - Node folder structure
+- ![完成](./completed.png) Nodes
+   - ![完成](./completed.png) Node folder structure
    - ![完成](./completed.png) Node identity
    - Node configuration
    - Node command-line options
