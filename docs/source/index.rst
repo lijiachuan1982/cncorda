@@ -76,22 +76,12 @@ We look forward to seeing what you can do with Corda!
    loadtesting.rst
    cli-application-shell-extensions.rst
 
-.. Documentation is not included in the pdf unless it is included in a toctree somewhere
-
 .. toctree::
    :caption: Corda 网络
    :maxdepth: 2
 
    corda-network/index.md
    corda-network/UAT.md
-
-.. toctree::
-   :caption: 内容
-   :maxdepth: 2
-
-   deterministic-modules.rst
-   release-notes.rst
-   changelog.rst
 
 .. toctree::
    :caption: 参与
