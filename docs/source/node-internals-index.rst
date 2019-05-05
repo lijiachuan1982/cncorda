@@ -1,4 +1,4 @@
-Node internals
+节点内部
 ==============
 
 .. toctree::
