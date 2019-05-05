@@ -50,7 +50,7 @@ We look forward to seeing what you can do with Corda!
    cheat-sheet
 
 .. toctree::
-   :caption: Development
+   :caption: 开发
    :maxdepth: 1
 
    quickstart-index.rst
@@ -65,7 +65,7 @@ We look forward to seeing what you can do with Corda!
    troubleshooting.rst
 
 .. toctree::
-   :caption: Operations
+   :caption: 维护
    :maxdepth: 2
 
    corda-nodes-index.rst
@@ -79,7 +79,7 @@ We look forward to seeing what you can do with Corda!
 .. Documentation is not included in the pdf unless it is included in a toctree somewhere
 
 .. conditional-toctree::
-   :caption: Corda Network
+   :caption: Corda 网络
    :maxdepth: 2
    :if_tag: htmlmode
 
@@ -87,7 +87,7 @@ We look forward to seeing what you can do with Corda!
    corda-network/UAT.md
 
 .. conditional-toctree::
-   :caption: Contents
+   :caption: 内容
    :maxdepth: 2
    :if_tag: pdfmode
 
@@ -96,7 +96,7 @@ We look forward to seeing what you can do with Corda!
    changelog.rst
 
 .. conditional-toctree::
-   :caption: Participate
+   :caption: 参与
    :maxdepth: 2
    :if_tag: htmlmode
 
