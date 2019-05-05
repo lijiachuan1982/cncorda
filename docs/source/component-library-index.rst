@@ -1,4 +1,4 @@
-Component library
+组件类库
 =================
 
 .. toctree::
