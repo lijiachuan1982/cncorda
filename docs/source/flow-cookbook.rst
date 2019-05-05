@@ -4,10 +4,12 @@
    <script type="text/javascript" src="_static/jquery.js"></script>
    <script type="text/javascript" src="_static/codesets.js"></script>
 
-Flow cookbook
+Flow 食谱
 =============
 
 This flow showcases how to use Corda's API, in both Java and Kotlin.
+
+这里展示了如何使用 Corda 的 API，包括 Java 和 Kotlin。
 
 .. container:: codeset
 
