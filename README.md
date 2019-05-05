@@ -104,7 +104,7 @@
 
 - Nodes
    - Node folder structure
-   - Node identity
+   - ![完成](./completed.png) Node identity
    - Node configuration
    - Node command-line options
    - Node administration
