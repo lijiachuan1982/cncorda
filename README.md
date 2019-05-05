@@ -3,6 +3,8 @@
 
 翻译进度：
 
+![完成](./completed.png) 完成，![部分完成](./partial-completed.png) 部分完成
+
 ![完成](./completed.png) Home
 - Release notes for Corda 4
 - Upgrading apps to Corda 4
