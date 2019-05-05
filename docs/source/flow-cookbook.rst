@@ -4,7 +4,7 @@
    <script type="text/javascript" src="_static/jquery.js"></script>
    <script type="text/javascript" src="_static/codesets.js"></script>
 
-Flow 食谱
+Flow 菜谱
 =============
 
 This flow showcases how to use Corda's API, in both Java and Kotlin.
