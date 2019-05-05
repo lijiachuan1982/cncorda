@@ -78,27 +78,24 @@ We look forward to seeing what you can do with Corda!
 
 .. Documentation is not included in the pdf unless it is included in a toctree somewhere
 
-.. conditional-toctree::
+.. toctree::
    :caption: Corda 网络
    :maxdepth: 2
-   :if_tag: htmlmode
 
    corda-network/index.md
    corda-network/UAT.md
 
-.. conditional-toctree::
+.. toctree::
    :caption: 内容
    :maxdepth: 2
-   :if_tag: pdfmode
 
    deterministic-modules.rst
    release-notes.rst
    changelog.rst
 
-.. conditional-toctree::
+.. toctree::
    :caption: 参与
    :maxdepth: 2
-   :if_tag: htmlmode
 
    contributing-index.rst
    deterministic-modules.rst
