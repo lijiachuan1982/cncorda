@@ -1,4 +1,4 @@
-Versioning
+版本
 ==========
 
 As the Corda platform evolves and new features are added it becomes important to have a versioning system which allows
@@ -8,7 +8,9 @@ friendly for a developer working on the platform. It first has to be parsed and 
 which to determine API differences. The release version is still useful and every MQ message the node sends attaches it
 to the ``release-version`` header property for debugging purposes.
 
-Platform version
+随着 Corda 平台的演进以及更多的功能被添加，拥有一个版本管理系统变得越来越重要，它需要能够允许用户很容易地在不同版本间进行比较。Corda 的每个 Release 都会使用有语义的版本名称，例如 ``major.minor.patch``。这对于在公共域中发布时很有用的，但对于在这个平台上工作的开发者来说可能不是很友好。首先它需要被解析然后这会被分解成三个部分，以此来确定 API 具有的差异。 Release 版本还是很有用的，为了 debug 的目的，节点所发送的每个 MQ 的消息都会将这个版本信息附加到 ``release-version`` 的 header 属性中。
+
+平台版本
 ----------------
 
 It is much easier to use a single incrementing integer value to represent the API version of the Corda platform, which
@@ -20,11 +22,15 @@ situations APIs may have to be changed, for example due to security issues. Ther
 and the release version - a change in the major or minor values may or may not increase the platform version. However
 we do endeavour to keep them synchronised for now, as a convenience.
 
+使用一个自增长的数值来表示 Corda 平台的 API 版本会更容易一些，这被称为 *平台版本*。这个跟 `API Level <https://developer.android.com/guide/topics/manifest/uses-sdk-element.html>`_ 类似。它从 1 开始，对于在整个平台中修改任何的公有 APIs 的每个新的 release 会加1。这包括节点自身的共有 APIs，RPC 系统，消息系统，序列化等。API 的向后兼容性一直都是被考虑和维护的，这样就不要从老的 APIs 向新版本迁移。仅仅在很少的情况下 APIs 可能会被移除，比如为了一些安全问题。在平台版本和 release version 之间是没有关系的，对于 major，minor 或者 patch 值的变化可能会也可能不会增加平台的版本。
+
 The platform version is part of the node's ``NodeInfo`` object, which is available from the ``ServiceHub``. This enables
 a CorDapp to find out which version it's running on and determine whether a desired feature is available. When a node
 registers with the network map it will check its own version against the minimum version requirement for the network.
 
-Minimum platform version
+平台版本是节点的 ``NodeInfo`` 对象中的一部分，它可以从 ``ServiceHub`` 中获取到。这个允许一个 CorDapp 能够找到它正在运行的是那个版本，并且确定一个指定的功能是不是可用。当一个节点在网络地图服务中注册的时候，它会使用节点的平台版本来强制网络使用一个最低版本的要求。
+
+最小平台版本
 ------------------------
 
 Applications can advertise a *minimum platform version* they require. If your app uses new APIs that were added in (for example) Corda 5,
@@ -32,7 +38,7 @@ you should specify a minimum version of 5. This will ensure the app won't be loa
 APIs, you can keep the minimum set to a lower number. Attempting to use new APIs on older nodes can cause ``NoSuchMethodError`` exceptions
 and similar problems, so you'd want to check the node version using ``ServiceHub.myInfo``.
 
-Target version
+目标版本
 --------------
 
 Applications can also advertise a *target version*. This is similar to the concept of the same name in Android and iOS.
@@ -52,7 +58,7 @@ Target versioning is one of the mechanisms we have to keep the platform evolving
 being bug-for-bug compatible with old versions. When no apps are loaded that target old versions, any emulations of older bugs or problems
 can be disabled.
 
-Publishing versions in your JAR manifests
+在你的 JAR manifests 中发布版本
 -----------------------------------------
 
 A well structured CorDapp should be split into two separate modules:
