@@ -1,4 +1,4 @@
-Deploying a node to a server
+部署节点
 ============================
 
 .. contents::
