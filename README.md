@@ -110,7 +110,7 @@
    - ![部分完成](./partial-completed.png) Node configuration
    - Node command-line options
    - ![部分完成](./partial-completed.png) Node administration
-   - Deploying a node to a server
+   - ![完成](./completed.png) Deploying a node to a server
    - Node database
    - Database access when running H2
    - Node shell
