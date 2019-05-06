@@ -111,7 +111,7 @@
    - Node command-line options
    - ![部分完成](./partial-completed.png) Node administration
    - ![完成](./completed.png) Deploying a node to a server
-   - Node database
+   - ![完成](./completed.png) Node database
    - Database access when running H2
    - Node shell
    - Interacting with a node

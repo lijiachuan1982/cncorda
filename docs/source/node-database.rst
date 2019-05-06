@@ -1,22 +1,28 @@
-Node database
+节点数据库
 =============
 
 .. contents::
 
-Configuring the node database
+配置节点数据库
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 H2
 --
 By default, nodes store their data in an H2 database. See :doc:`node-database-access-h2`.
 
+默认的，节点会将他们的数据存储在 H2 数据库中。查看 :doc:`node-database-access-h2`。
+
 Nodes can also be configured to use PostgreSQL and SQL Server. However, these are experimental community contributions.
 The Corda continuous integration pipeline does not run unit tests or integration tests of these databases.
+
+节点也可以被配置用来使用 PostgreSQL 和 SQL Server。然而，这些还都是由社区贡献出来的处于试验的阶段。Corda 的持续集成 pipeline 还没有针对这些数据库运行单元测试和集成测试。
 
 PostgreSQL
 ----------
 Nodes can also be configured to use PostgreSQL 9.6, using PostgreSQL JDBC Driver 42.1.4. Here is an example node
 configuration for PostgreSQL:
+
+节点也可以配置来使用  PostgreSQL 9.6，使用 PostgreSQL JDBC Driver 42.1.4。下边是配置使用 PostgreSQL 的例子：
 
 .. sourcecode:: groovy
 
@@ -42,6 +48,12 @@ Note that:
   Corda doesn't provision Hibernate with a schema namespace setting and a sequence object may be not created.
   Run the DDL statement and replace *my_schema* with your schema namespace:
 
+需要注意：
+
+* 数据库 schema 名字可以在 JDBC URL 字符中被设置为 *currentSchema=my_schema*
+* 数据库 schema 名字必须根据 `PostgreSQL 文档 <https://www.postgresql.org/docs/9.3/static/ddl-schemas.html#DDL-SCHEMAS-PATH>`_，在标准的 schema 检索路径以 ``dataSource.user``结尾，或者这个 schema 检索的路径必须为用户显式地配置。
+* 如果你的 PostgresSQL 数据库为了不同的 Corda 节点存储了多个 schema 实例（使用 JDBC URL currentSchema=my_schema），那么你需要为在第一个实例后边的这些 schema 手动地创建一个 *hibernate_sequence* 有序对象。Corda 并没有初始带有一个 schema 命名空间设置的 Hibernate，所以一个有序对象可能不会被创建。运行 DDL 语句并且将 *my_schema* 替换成你的 schema 命名空间：
+
   .. sourcecode:: groovy
 
     CREATE SEQUENCE my_schema.hibernate_sequence INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 8 CACHE 1 NO CYCLE;
@@ -50,6 +62,8 @@ SQLServer
 ---------
 Nodes also have untested support for Microsoft SQL Server 2017, using Microsoft JDBC Driver 6.2 for SQL Server. Here is
 an example node configuration for SQLServer:
+
+节点也可以支持未测试过的 Microsoft SQL Server 2017，使用 Microsoft JDBC Driver 6.2 for SQL Server，下边是一个对于 SQL Server 的节点配置：
 
 .. sourcecode:: groovy
 
@@ -69,10 +83,14 @@ Note that:
 * Ensure the directory referenced by jarDirs contains only one JDBC driver JAR file; by the default,
   sqljdbc_6.2/enu/contains two JDBC JAR files for different Java versions.
 
-Node database tables
+* 确认 jarDirs 引用的路径里仅仅包含一个 JDBC driver JAR 文件；默认的 sqljdbc_6.2/enu/ 包含了两个针对不同的 Java 版本的 JDBC JAR 文件。
+
+节点数据库表
 ^^^^^^^^^^^^^^^^^^^^
 
 By default, the node database has the following tables:
+
+默认的，节点的数据库包含以下表：
 
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Table name                  | Columns                                                                                                                                                                                                  |
@@ -135,11 +153,13 @@ By default, the node database has the following tables:
 +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-Database connection pool
+数据库连接池
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Corda uses `Hikari Pool <https://github.com/brettwooldridge/HikariCP>`_ for creating the connection pool.
 To configure the connection pool any custom properties can be set in the `dataSourceProperties` section.
+
+Corda 使用 `Hikari Pool <https://github.com/brettwooldridge/HikariCP>`_ 来创建连接池。要配置连接池，可以在 `dataSourceProperties` 部分配置任何的自定义属性。
 
 For example:
 
