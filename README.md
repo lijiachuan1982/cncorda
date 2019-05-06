@@ -65,7 +65,7 @@
    - Hello, World! Pt.2 - Contract constraints
    - Writing a contract
    - Writing a contract test
-   - Upgrading contracts
+   - ![完成](./completed.png) Upgrading contracts
    - Integration testing
    - Using the client RPC API
    - Building transactions
