@@ -60,7 +60,7 @@
    - Configuring Responder Flows
    - ![完成](./completed.png) Flow cookbook
    
-- Tutorials
+- ![完成](./completed.png) Tutorials
    - Hello, World!
    - Hello, World! Pt.2 - Contract constraints
    - Writing a contract
