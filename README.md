@@ -114,7 +114,7 @@
    - ![完成](./completed.png) Node database
    - [完成](./completed.png) Database access when running H2
    - Node shell
-   - Interacting with a node
+   - ![部分完成](./partial-completed.png) Interacting with a node
    - Creating nodes locally
    - Running nodes locally
    
