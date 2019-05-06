@@ -112,7 +112,7 @@
    - ![部分完成](./partial-completed.png) Node administration
    - ![完成](./completed.png) Deploying a node to a server
    - ![完成](./completed.png) Node database
-   - Database access when running H2
+   - [完成](./completed.png) Database access when running H2
    - Node shell
    - Interacting with a node
    - Creating nodes locally
