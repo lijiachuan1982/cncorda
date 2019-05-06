@@ -1,9 +1,9 @@
-Creating nodes locally
+创建本地节点
 ======================
 
 .. contents::
 
-Handcrafting a node
+手动创建节点
 -------------------
 A node can be created manually by creating a folder that contains the following items:
 
@@ -20,13 +20,32 @@ A node can be created manually by creating a folder that contains the following 
     * The (deprecated) default webserver can be downloaded from http://r3.bintray.com/corda/net/corda/corda-webserver/ (under /|corda_version|/corda-webserver-|corda_version|.jar)
     * A Spring Boot alternative can be found here: https://github.com/corda/spring-webserver
 
+一个节点可以通过创建一个包含下边项目的文件夹来创建：
+
+* Corda JAR
+
+    * 可以从 https://r3.bintray.com/corda/net/corda/corda/ 下载 (在 /|corda_version|/corda-|corda_version|.jar 下)
+
+* 一个节点的配置文件为 ``node.conf``, 像 :doc:`corda-configuration-file` 所说的那样进行配置
+
+* 一个名为 ``cordapps`` 文件夹包含了你想要节点加载的任何的 CorDapp JARs
+
+* **可选的:** 一个名为 ``corda-webserver.jar`` 的 webserver JAR，可以通过 RPC 连接到节点
+
+    * (已废弃的) 默认的 webserver 可以从 http://r3.bintray.com/corda/net/corda/corda-webserver/ 下载(在 /|corda_version|/corda-webserver-|corda_version|.jar 下)
+    * 一个 Spring Boot 能够在这里找到: https://github.com/corda/spring-webserver
+
 The remaining files and folders described in :doc:`node-structure` will be generated at runtime.
 
-The Cordform task
+在 :doc:`node-structure` 中描述的剩余的文件和文件夹将会在运行时生成。
+
+Cordform 任务
 -----------------
 Corda provides a gradle plugin called ``Cordform`` that allows you to automatically generate and configure a set of
 nodes for testing and demos. Here is an example ``Cordform`` task called ``deployNodes`` that creates three nodes, defined
 in the `Kotlin CorDapp Template <https://github.com/corda/cordapp-template-kotlin/blob/release-V|platform_version|/build.gradle#L95>`_:
+
+Corda 提供了一个叫做 ``Cordform`` 的 gradle plugin，它允许你自动地生成和配置一套节点的信息用于测试和 demos。下边是一个叫做 ``deployNodes`` 的 ``Cordform`` 任务，它在 `Kotlin CorDapp Template <https://github.com/corda/cordapp-template-kotlin/blob/release-V|platform_version|/build.gradle#L95>`_ 项目中创建了 3 个节点：
 
 .. sourcecode:: groovy
 
@@ -102,13 +121,34 @@ Running this task will create three nodes in the ``build/nodes`` folder:
   * Are running the ``corda-finance`` CorDapp
   * Have an RPC user, ``user1``, that can be used to log into the node via RPC
 
+运行这个任务会在 ``build/nodes`` 文件夹下创建 3 个节点：
+
+* 一个 ``Notary`` 节点：
+
+  * 提供一个 validating notary 服务
+  * 不会有 webserver（因为 ``webPort`` 没有定义）
+  * 会运行 corda-finance CorDapp
+
+* ``PartyA`` 和 ``PartyB`` 节点：
+
+  * 不提供任何服务
+  * 会有一个 webserver（因为 ``webPort`` 被定义了）
+  * 运行 ``corda-finance`` CorDapp
+  * 有一个 RPC 用户 - ``user1``，可以通过 RPC 登陆到节点
+
 Additionally, all three nodes will include any CorDapps defined in the project's source folders, even though these
 CorDapps are not listed in each node's ``cordapps`` entry. This means that running the ``deployNodes`` task from the
 template CorDapp, for example, would automatically build and add the template CorDapp to each node.
 
+另外，所有的三个节点都会包含任何在项目的 source 文件夹中定义的任何 CorDapp，即使这些 CorDapps 没有被列在每个节点的 ``cordapps`` entry。这就意味着在 template CorDapp 中运行这个 ``deployNodes`` 任务会自动 build 并将这个 template CorDapp 添加到每个节点中。
+
 You can extend ``deployNodes`` to generate additional nodes.
 
+你可以扩展这个 ``deployNodes`` 来生成更多的节点。
+
 .. warning:: When adding nodes, make sure that there are no port clashes!
+
+.. warning:: 当添加节点的时候，要确保没有端口冲突！
 
 To extend node configuration beyond the properties defined in the ``deployNodes`` task use the ``configFile`` property with the path (relative or absolute) set to an additional configuration file.
 This file should follow the standard :doc:`corda-configuration-file` format, as per node.conf. The properties from this file will be appended to the generated node configuration. Note, if you add a property already created by the 'deployNodes' task, both properties will be present in the file.
