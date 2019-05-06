@@ -121,7 +121,7 @@
 - ![完成](./completed.png) Networks
    - What is a compatibility zone?
    - Network certificates
-   - The network map
+   - ![部分完成](./partial-completed.png) The network map
    - Cipher suites supported by Corda
    - Joining an existing compatibility zone
    - Joining Corda Testnet
